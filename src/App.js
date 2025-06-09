@@ -18,8 +18,6 @@ function App() {
     verde: false
   })
 
-  console.log(colores)
-
   return (
     <div className="App appContainer background">
       <BackgroundBalls />

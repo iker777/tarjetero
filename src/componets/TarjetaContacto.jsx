@@ -1,21 +1,45 @@
-function TarjetaContacto({nombre, correo, telefono, enlaceContacto, colores}){
+import React, { useEffect, useRef } from 'react';
+import VanillaTilt from "vanilla-tilt"
 
-    function asignarColor(){
-        if(colores.azul){
+
+function TarjetaContacto({ nombre, correo, telefono, enlaceContacto, colores }) {
+
+    const tiltRef = useRef(null);
+    const tiltInstance = useRef(null);
+
+    useEffect(() => {
+        // Inicializa Vanilla Tilt y guarda la instancia
+        tiltInstance.current = VanillaTilt.init(tiltRef.current, {
+            max: 20,
+            // startX: 5,
+            // startY: 5,
+            speed: 300,
+            scale: 1.05,
+            transition: true,
+            glare: true,
+            gyroscope: true,   // Boolean to enable/disable device orientation detection,
+            'max-glare': 0.5,
+        });
+
+        return () => tiltRef.current?.destroy();
+    }, []);
+
+    function asignarColor() {
+        if (colores.azul) {
             return "azul"
-        }else if(colores.rojo){
+        } else if (colores.rojo) {
             return "rojo"
-        }else if(colores.morado){
+        } else if (colores.morado) {
             return "morado"
-        }else{
+        } else {
             return "verde"
         }
     }
 
     const color = asignarColor()
 
-    return(
-        <section className={`tarjeta tarjeta--${color}`}>
+    return (
+        <section ref={tiltRef} className={`tarjeta tarjeta--${color}`}>
             <div className={`tarjeta__cont tarjeta__cont--${color}`}>
                 <div className="tarjeta__linkCont">
                     <span className="tarjeta__span tarjeta__span--telefono">☎ {telefono}</span>
