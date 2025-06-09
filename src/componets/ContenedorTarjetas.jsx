@@ -1,14 +1,14 @@
 import TarjetaContacto from "./TarjetaContacto";
 
 
-function ContenedorTarjetas() {
+function ContenedorTarjetas({nombre, correo, telefono, link}) {
     return (
         <section className="contenedorTarjetas">
             <TarjetaContacto
-                nombre="Iker"
-                correo="iker@gmail.com"
-                telefono="676676676"
-                enlaceContacto="https://github.com/iker777"
+                nombre={nombre}
+                correo={correo}
+                telefono={telefono}
+                enlaceContacto={link}
             />
         </section>
     )

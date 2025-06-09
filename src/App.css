@@ -14,6 +14,9 @@
   --title-color: rgba(24, 125, 255);
   --hover-bg-grey: rgba(255, 217, 0, 0.1);
   --background: #161b22;
+  --red-card: rgb(255, 107, 107);
+  --green-card: rgb(29, 209, 161);
+  --purple-card: rgb(243, 104, 224);
   /* Tamaños */
   --width-tarjeta: calc(480px * 1);
   --height-tarjeta: calc(320px * 1);
@@ -67,8 +70,6 @@
   align-items: center;
   flex-direction: column;
   padding: 8px;
-  width: var(--width-tarjeta);
-  height: var(--height-tarjeta);
   background: #161b22;
   border-radius: 12px;
   box-shadow: 0 0 15px var(--primary-color-5);
@@ -91,7 +92,7 @@
 
 input:focus-visible {
   outline: 2px solid var(--primary-color);
-  border-color:var(--primary-color);
+  border-color: var(--primary-color);
   box-shadow: 0 0 15px solid var(--primary-color);
 }
 
@@ -181,7 +182,8 @@ input:focus-visible {
 .tarjeta__span--telefono {
   text-shadow: 0 0 15px var(--text-color);
 }
-.tarjeta__a{
+
+.tarjeta__a {
   padding: 8px;
 }
 
@@ -292,6 +294,123 @@ input:focus-visible {
   box-shadow: 40vmin 0 5.196265905749415vmin currentColor;
 }
 
+/* Color picker switch */
+.form__colorContenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__colorSwitch {
+  position: relative;
+  width: 50px;
+  height: 20px;
+  border-radius: 20px;
+  background: #1f1f1f;
+  margin: 20px;
+  cursor: pointer;
+}
+.form__colorSwitch::before {
+  content:"";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  /* background: var(--red-card); */
+  border-radius: 20px;
+  transition: 0.5s;
+  scale: 0.8;
+}
+.form__colorSwitch:hover::before{
+  left: 10px;
+  opacity: 1;
+  scale: 1;
+}
+.form__colorSwitch.active::before {
+    left: 30px;
+    opacity: 1;
+    scale: 1.25;
+    /* box-shadow: 0 0 10px var(--red-card), */
+    /* 0 0 20px var(--red-card), */
+    /* 0 0 50px var(--red-card); */
+}
+
+/* Color Azul */
+.form__colorSwitch--azul::before{
+  background: var(--primary-color);
+}
+.form__colorSwitch--azul.active::before {
+    box-shadow: 0 0 10px var(--primary-color),
+    0 0 20px var(--primary-color),
+    0 0 50px var(--primary-color);
+}
+.form__colorSwitch--azul.active::before {
+    box-shadow: 0 0 10px var(--primary-color),
+    0 0 20px var(--primary-color),
+    0 0 50px var(--primary-color);
+}
+
+/* Color Rojo */
+.form__colorSwitch--rojo::before{
+  background: var(--red-card);
+}
+.form__colorSwitch--rojo.active::before {
+    left: 30px;
+    opacity: 1;
+    scale: 1.25;
+    box-shadow: 0 0 10px var(--red-card),
+    0 0 20px var(--red-card),
+    0 0 50px var(--red-card);
+}
+.form__colorSwitch--rojo.active::before {
+    left: 30px;
+    opacity: 1;
+    scale: 1.25;
+    box-shadow: 0 0 10px var(--red-card),
+    0 0 20px var(--red-card),
+    0 0 50px var(--red-card);
+}
+/* Color morado */
+.form__colorSwitch--morado::before{
+  background: var(--purple-card);
+}
+.form__colorSwitch--morado.active::before {
+    left: 30px;
+    opacity: 1;
+    scale: 1.25;
+    box-shadow: 0 0 10px var(--purple-card),
+    0 0 20px var(--purple-card),
+    0 0 50px var(--purple-card);
+}
+.form__colorSwitch--morado.active::before {
+    left: 30px;
+    opacity: 1;
+    scale: 1.25;
+    box-shadow: 0 0 10px var(--purple-card),
+    0 0 20px var(--purple-card),
+    0 0 50px var(--purple-card);
+}
+/* Color verde */
+.form__colorSwitch--verde::before{
+  background: var(--green-card);
+}
+.form__colorSwitch--verde.active::before {
+    left: 30px;
+    opacity: 1;
+    scale: 1.25;
+    box-shadow: 0 0 10px var(--green-card),
+    0 0 20px var(--green-card),
+    0 0 50px var(--green-card);
+}
+.form__colorSwitch--verde.active::before {
+    left: 30px;
+    opacity: 1;
+    scale: 1.25;
+    box-shadow: 0 0 10px var(--green-card),
+    0 0 20px var(--green-card),
+    0 0 50px var(--green-card);
+}
+
 
 @media (max-width: 1280px) {
   .appContainer {
@@ -320,16 +439,20 @@ input:focus-visible {
   .contenedorTarjetas {
     margin: 40px;
   }
-  .editor{
+
+  .editor {
     width: 100%;
   }
-  .form{
+
+  .form {
     width: 100%;
   }
+
   .contenedorTarjetas {
     width: 100%;
   }
-  .tarjeta{
+
+  .tarjeta {
     margin: 16px;
   }
 }
