@@ -14,9 +14,19 @@
   --title-color: rgba(24, 125, 255);
   --hover-bg-grey: rgba(255, 217, 0, 0.1);
   --background: #161b22;
+
+  /* Colores Tarjeta */
   --red-card: rgb(255, 107, 107);
+  --red-card-5: rgb(255, 107, 107, 0.5);
+  --red-card-hover: rgb(249, 82, 62);
   --green-card: rgb(29, 209, 161);
+  --green-card-5: rgb(29, 209, 161, 0.5);
+  --green-card-hover: rgb(23, 184, 116);
   --purple-card: rgb(243, 104, 224);
+  --purple-card-5: rgb(243, 104, 224, 0.5);
+  --purple-card-hover: rgb(237, 79, 179);
+  --card-text-alternative: rgb(59, 59, 59);
+
   /* Tamaños */
   --width-tarjeta: calc(480px * 1);
   --height-tarjeta: calc(320px * 1);
@@ -187,6 +197,107 @@ input:focus-visible {
   padding: 8px;
 }
 
+/* Tarjeta azul */
+.tarjeta--azul {
+  background-color: var(--primary-color-5);
+  border: 4px solid var(--primary-color);
+}
+
+.tarjeta__cont--azul {
+  background-color: var(--primary-color-5);
+  border: 2px solid var(--primary-color);
+}
+
+.btn--azul {
+  background-color: var(--primary-color-5);
+  border: 2px solid var(--primary-color);
+  color: var(--text-color);
+}
+
+.btn--azul:hover {
+  background: var(--primary-color-hover);
+  box-shadow: 0 0 20px var(--primary-color-hover);
+}
+.tarjeta__h1--azul {
+  color: var(--title-color);
+  margin-bottom: 8px;
+}
+/* Tarjeta roja */
+.tarjeta--rojo {
+  background-color: var(--red-card-5);
+  border: 4px solid var(--red-card);
+}
+
+.tarjeta__cont--rojo {
+  background-color: var(--red-card-5);
+  border: 2px solid var(--red-card);
+}
+
+.btn--rojo {
+  background-color: var(--red-card-5);
+  border: 2px solid var(--red-card);
+  color: var(--text-color);
+}
+
+.btn--rojo:hover {
+  background: var(--red-card-hover);
+  box-shadow: 0 0 20px var(--red-card-hover);
+}
+.tarjeta__h1--rojo {
+  color: var(--card-text-alternative);
+  margin-bottom: 8px;
+}
+/* Tarjeta morada */
+.tarjeta--morado {
+  background-color: var(--purple-card-5);
+  border: 4px solid var(--purple-card);
+}
+
+.tarjeta__cont--morado {
+  background-color: var(--purple-card-5);
+  border: 2px solid var(--purple-card);
+}
+
+.btn--morado {
+  background-color: var(--purple-card-5);
+  border: 2px solid var(--purple-card);
+  color: var(--text-color);
+}
+
+.btn--morado:hover {
+  background: var(--purple-card-hover);
+  box-shadow: 0 0 20px var(--purple-card-hover);
+}
+.tarjeta__h1--morado {
+  color: var(--card-text-alternative);
+  margin-bottom: 8px;
+}
+/* Tarjeta verde */
+.tarjeta--verde {
+  background-color: var(--green-card-5);
+  border: 4px solid var(--green-card);
+}
+
+.tarjeta__cont--verde {
+  background-color: var(--green-card-5);
+  border: 2px solid var(--green-card);
+}
+
+.btn--verde {
+  background-color: var(--green-card-5);
+  border: 2px solid var(--green-card);
+  color: var(--text-color);
+}
+
+.btn--verde:hover {
+  background: var(--green-card-hover);
+  box-shadow: 0 0 20px var(--green-card-hover);
+}
+.tarjeta__h1--verde {
+  color: var(--card-text-alternative);
+  margin-bottom: 8px;
+}
+
 /* Background */
 @keyframes move {
   100% {
@@ -310,8 +421,9 @@ input:focus-visible {
   margin: 20px;
   cursor: pointer;
 }
+
 .form__colorSwitch::before {
-  content:"";
+  content: "";
   position: absolute;
   left: 0;
   width: 20px;
@@ -321,92 +433,104 @@ input:focus-visible {
   transition: 0.5s;
   scale: 0.8;
 }
-.form__colorSwitch:hover::before{
+
+.form__colorSwitch:hover::before {
   left: 10px;
   opacity: 1;
   scale: 1;
 }
+
 .form__colorSwitch.active::before {
-    left: 30px;
-    opacity: 1;
-    scale: 1.25;
-    /* box-shadow: 0 0 10px var(--red-card), */
-    /* 0 0 20px var(--red-card), */
-    /* 0 0 50px var(--red-card); */
+  left: 30px;
+  opacity: 1;
+  scale: 1.25;
+  /* box-shadow: 0 0 10px var(--red-card), */
+  /* 0 0 20px var(--red-card), */
+  /* 0 0 50px var(--red-card); */
 }
 
 /* Color Azul */
-.form__colorSwitch--azul::before{
+.form__colorSwitch--azul::before {
   background: var(--primary-color);
 }
+
 .form__colorSwitch--azul.active::before {
-    box-shadow: 0 0 10px var(--primary-color),
+  box-shadow: 0 0 10px var(--primary-color),
     0 0 20px var(--primary-color),
     0 0 50px var(--primary-color);
 }
+
 .form__colorSwitch--azul.active::before {
-    box-shadow: 0 0 10px var(--primary-color),
+  box-shadow: 0 0 10px var(--primary-color),
     0 0 20px var(--primary-color),
     0 0 50px var(--primary-color);
 }
 
 /* Color Rojo */
-.form__colorSwitch--rojo::before{
+.form__colorSwitch--rojo::before {
   background: var(--red-card);
 }
+
 .form__colorSwitch--rojo.active::before {
-    left: 30px;
-    opacity: 1;
-    scale: 1.25;
-    box-shadow: 0 0 10px var(--red-card),
+  left: 30px;
+  opacity: 1;
+  scale: 1.25;
+  box-shadow: 0 0 10px var(--red-card),
     0 0 20px var(--red-card),
     0 0 50px var(--red-card);
 }
+
 .form__colorSwitch--rojo.active::before {
-    left: 30px;
-    opacity: 1;
-    scale: 1.25;
-    box-shadow: 0 0 10px var(--red-card),
+  left: 30px;
+  opacity: 1;
+  scale: 1.25;
+  box-shadow: 0 0 10px var(--red-card),
     0 0 20px var(--red-card),
     0 0 50px var(--red-card);
 }
+
 /* Color morado */
-.form__colorSwitch--morado::before{
+.form__colorSwitch--morado::before {
   background: var(--purple-card);
 }
+
 .form__colorSwitch--morado.active::before {
-    left: 30px;
-    opacity: 1;
-    scale: 1.25;
-    box-shadow: 0 0 10px var(--purple-card),
+  left: 30px;
+  opacity: 1;
+  scale: 1.25;
+  box-shadow: 0 0 10px var(--purple-card),
     0 0 20px var(--purple-card),
     0 0 50px var(--purple-card);
 }
+
 .form__colorSwitch--morado.active::before {
-    left: 30px;
-    opacity: 1;
-    scale: 1.25;
-    box-shadow: 0 0 10px var(--purple-card),
+  left: 30px;
+  opacity: 1;
+  scale: 1.25;
+  box-shadow: 0 0 10px var(--purple-card),
     0 0 20px var(--purple-card),
     0 0 50px var(--purple-card);
 }
+
 /* Color verde */
-.form__colorSwitch--verde::before{
+.form__colorSwitch--verde::before {
   background: var(--green-card);
 }
+
 .form__colorSwitch--verde.active::before {
-    left: 30px;
-    opacity: 1;
-    scale: 1.25;
-    box-shadow: 0 0 10px var(--green-card),
+  left: 30px;
+  opacity: 1;
+  scale: 1.25;
+  box-shadow: 0 0 10px var(--green-card),
     0 0 20px var(--green-card),
     0 0 50px var(--green-card);
 }
+
 .form__colorSwitch--verde.active::before {
-    left: 30px;
-    opacity: 1;
-    scale: 1.25;
-    box-shadow: 0 0 10px var(--green-card),
+  left: 30px;
+  opacity: 1;
+  scale: 1.25;
+  box-shadow: 0 0 10px var(--green-card),
     0 0 20px var(--green-card),
     0 0 50px var(--green-card);
 }

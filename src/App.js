@@ -11,6 +11,15 @@ function App() {
   const [telefono, setTelefono] = useState("+76767676")
   const [link, setLink] = useState("https://github.com/iker777")
 
+  const [colores, setColores] = useState({
+    azul: true,
+    rojo: false,
+    morado: false,
+    verde: false
+  })
+
+  console.log(colores)
+
   return (
     <div className="App appContainer background">
       <BackgroundBalls />
@@ -19,12 +28,15 @@ function App() {
         setCorreo={setCorreo}
         setTelefono={setTelefono}
         setLink={setLink}
+        setColores={setColores}
+        colores={colores}
       />
       <ContenedorTarjetas
         nombre={nombre}
         correo={correo}
         telefono={telefono}
         link={link}
+        colores={colores}
       />
     </div>
   );
